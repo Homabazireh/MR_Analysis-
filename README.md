@@ -1,1 +1,88 @@
-# MR_Analysis-
+# MR analysis
+
+Anonymised R Markdown code for bidirectional Mendelian randomisation of
+circulating proteins and kidney function (eGFRcrea and eGFRcys).
+
+## Contents
+
+- `MR_analysis.Rmd`: the supplied analysis notebook, with personal details and
+  embedded credentials removed.
+- `figures/Forest_plot_Forward_MR.png`: supplied forward-MR forest plot.
+- `figures/Forest_plot_Reverse_eGFRcrea.png`: supplied reverse-MR forest plot.
+- `.Renviron.example`: empty local configuration template.
+- `.gitignore`: excludes local credentials, source data, cached objects, and
+  generated results from version control.
+
+The notebook contains forward and reverse MR, IVW, weighted-median and MR-Egger
+analyses, sensitivity analyses, MR-PRESSO, forest plots, and F-statistics.
+The figures are the supplied results; they were not regenerated.
+
+## Local setup
+
+1. Open R or RStudio in the repository directory.
+2. Provide the required R packages: `TwoSampleMR`, `data.table`, `dplyr`,
+   `tibble`, `readxl`, `stringr`, `ieugwasr`, `ggplot2`, `tidyr`, `MRPRESSO`,
+   `knitr`, and `rmarkdown`. Some existing notebook sections use `remotes` to
+   install MR-PRESSO. Package versions were not supplied or pinned.
+3. Supply the analysis inputs locally. The default input directory is `data/`.
+   The notebook expects deCODE pQTL `.txt.gz` files,
+   `metal_eGFR_meta_ea1.TBL.map.annot.gc.gz`,
+   `metal_eGFRcys_meta1.TBL.map.annot.gc.gz`, and, for the workbook-based forest
+   plots, `MR_Results.xlsx`. These files are not included.
+4. Set `OPENGWAS_JWT` outside the notebook. One option is to copy
+   `.Renviron.example` to `.Renviron`, enter a newly issued token in that local
+   file, and restart R from the repository directory. `.Renviron` is ignored
+   by Git. Do not put a real token into the example file or notebook.
+5. Run the `local-configuration` chunk first, then the relevant analysis
+   sections in order. Relative analysis outputs and intermediate files use
+   `results/`. Publication forest plots use `results/forest_plots/`.
+
+Optional environment variables allow local paths to be configured without
+editing the notebook:
+
+| Variable | Default |
+| --- | --- |
+| `MR_PROJECT_DIR` | Directory from which the setup chunk starts |
+| `MR_DATA_DIR` | `<project>/data` |
+| `MR_RESULTS_DIR` | `<project>/results` |
+| `MR_RESULTS_WORKBOOK` | `<data>/MR_Results.xlsx` |
+
+Use absolute paths for overrides. Keep personal paths in local configuration.
+
+## Execution status
+
+This is an anonymised research notebook. Its repeated and alternative analysis
+sections, statistical methods, thresholds, and supplied scientific results
+have been retained. It is not a newly validated end-to-end pipeline.
+
+Existing sections load cached objects, including `decode_pqtl.RData` in the
+input directory and `pqtl_sig.RData` in the results directory. They also load
+harmonised objects produced in earlier sections. These objects were not
+supplied. Review the alternative sections and provide or generate the required
+objects before running the notebook from start to finish.
+
+The analysis was not executed during anonymisation because R and the source
+datasets were unavailable. Static checks verified the removal of the detected
+identifiers and credentials. The two PNG files contained no embedded metadata
+and were copied without changing their pixels.
+
+## Anonymisation
+
+Removed the original author field, personal revision dates, personal and
+institutional computer paths, and all hard-coded OpenGWAS credentials.
+Removed credential/account inspection commands and replaced credential setup
+with a local environment lookup that does not print the credential. Replaced
+dated local output suffixes with a generic `_revised` suffix.
+
+Any credential previously embedded in the original notebook should be revoked
+or replaced. Only the sanitised files should be committed. Generated reports
+can contain local paths or runtime diagnostics, so review them before sharing.
+
+Public study names, variant identifiers, protein names, and the original
+tutorial reference are retained as scientific provenance.
+
+## Supplied figures
+
+![Forward Mendelian randomisation](figures/Forest_plot_Forward_MR.png)
+
+![Reverse Mendelian randomisation: eGFRcrea](figures/Forest_plot_Reverse_eGFRcrea.png)
