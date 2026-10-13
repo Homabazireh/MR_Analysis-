@@ -81,8 +81,3 @@ can contain local paths or runtime diagnostics, so review them before sharing.
 Public study names, variant identifiers, protein names, and the original
 tutorial reference are retained as scientific provenance.
 
-## Supplied figures
-
-![Forward Mendelian randomisation](figures/Forest_plot_Forward_MR.png)
-
-![Reverse Mendelian randomisation: eGFRcrea](figures/Forest_plot_Reverse_eGFRcrea.png)
