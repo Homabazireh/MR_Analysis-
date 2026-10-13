@@ -1,0 +1,49 @@
+# Credentials and local configuration
+.Renviron
+.Renviron.*
+!.Renviron.example
+.env
+.env.*
+*.pem
+*.key
+.httr-oauth
+.netrc
+
+# R session state and editor files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+*.RData
+*.rdata
+*.rda
+*.rds
+.DS_Store
+Thumbs.db
+
+# Local study data and generated analysis outputs
+/data/
+/results/
+/MR_results*/
+/MR_plots*/
+*.csv
+*.tsv
+*.TBL
+*.xlsx
+*.xls
+*.gz
+*.zip
+*.log
+*.html
+*.pdf
+*_cache/
+*_files/
+
+# Exclude figure files
+/figures/
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.svg

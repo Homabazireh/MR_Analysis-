@@ -7,15 +7,13 @@ circulating proteins and kidney function (eGFRcrea and eGFRcys).
 
 - `MR_analysis.Rmd`: the supplied analysis notebook, with personal details and
   embedded credentials removed.
-- `figures/Forest_plot_Forward_MR.png`: supplied forward-MR forest plot.
-- `figures/Forest_plot_Reverse_eGFRcrea.png`: supplied reverse-MR forest plot.
 - `.Renviron.example`: empty local configuration template.
 - `.gitignore`: excludes local credentials, source data, cached objects, and
   generated results from version control.
 
 The notebook contains forward and reverse MR, IVW, weighted-median and MR-Egger
 analyses, sensitivity analyses, MR-PRESSO, forest plots, and F-statistics.
-The figures are the supplied results; they were not regenerated.
+Figure files are excluded from this package.
 
 ## Local setup
 
@@ -63,8 +61,7 @@ objects before running the notebook from start to finish.
 
 The analysis was not executed during anonymisation because R and the source
 datasets were unavailable. Static checks verified the removal of the detected
-identifiers and credentials. The two PNG files contained no embedded metadata
-and were copied without changing their pixels.
+identifiers and credentials.
 
 ## Anonymisation
 
@@ -80,4 +77,3 @@ can contain local paths or runtime diagnostics, so review them before sharing.
 
 Public study names, variant identifiers, protein names, and the original
 tutorial reference are retained as scientific provenance.
-

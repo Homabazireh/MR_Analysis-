@@ -1,0 +1,9 @@
+# Copy to .Renviron, enter a newly issued token locally, and restart R.
+# Never commit .Renviron or enter a real token in this example file.
+OPENGWAS_JWT=
+
+# Optional path overrides: uncomment locally and use your own absolute paths.
+# MR_PROJECT_DIR=
+# MR_DATA_DIR=
+# MR_RESULTS_DIR=
+# MR_RESULTS_WORKBOOK=
