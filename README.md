@@ -63,17 +63,6 @@ The analysis was not executed during anonymisation because R and the source
 datasets were unavailable. Static checks verified the removal of the detected
 identifiers and credentials.
 
-## Anonymisation
+## The dataset
 
-Removed the original author field, personal revision dates, personal and
-institutional computer paths, and all hard-coded OpenGWAS credentials.
-Removed credential/account inspection commands and replaced credential setup
-with a local environment lookup that does not print the credential. Replaced
-dated local output suffixes with a generic `_revised` suffix.
-
-Any credential previously embedded in the original notebook should be revoked
-or replaced. Only the sanitised files should be committed. Generated reports
-can contain local paths or runtime diagnostics, so review them before sharing.
-
-Public study names, variant identifiers, protein names, and the original
-tutorial reference are retained as scientific provenance.
+Required pqtl from the decode study and the eGFR data from the CKDGen study were downloaded. 
